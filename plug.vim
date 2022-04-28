@@ -14,6 +14,5 @@ call plug#begin()
 	Plug 'lifepillar/vim-gruvbox8'
 	Plug 'neovim/nvim-lspconfig'
 	Plug 'hrsh7th/nvim-cmp'
-	Plug 'famiu/nvim-reload'
 
 call plug#end()
