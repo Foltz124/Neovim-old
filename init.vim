@@ -1,5 +1,5 @@
-source /home/jon/.config/nvim/format.vim
-source /home/jon/.config/nvim/functions.vim
-source /home/jon/.config/nvim/mappings.vim
-source /home/jon/.config/nvim/plug.vim
+" Install Plugins
+source /home/jon/.config/nvim/general/general.init.vim
 
+" Plugin files
+source /home/jon/.config/nvim/plugins/plugin.init.vim

@@ -9,5 +9,4 @@ set shiftwidth=4
 set expandtab
 
 " Set theme
-autocmd vimenter * ++nested colorscheme gruvbox8
-
+colorscheme github_dark_default
