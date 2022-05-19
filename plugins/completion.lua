@@ -56,15 +56,17 @@
 
   -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  require('lspconfig')['clangd'].setup {
-    capabilities = capabilities
-  }
+  local servers = {'clangd', 'pyright'}
+  for _, server in ipairs(servers) do
+      require('lspconfig')[server].setup {
+        capabilities = capabilities
+      }
 
-  require('lspconfig')['clangd'].setup {
-    cmd = { "clangd" };
-    init_options = {
-        compiliationDatabaseDirectory = "./build";
-    },
-    on_attach = on_attach
-  }
+      require('lspconfig')[server].setup {
+        cmd = { "clangd" };
+        init_options = {
+            compiliationDatabaseDirectory = "./build";
+        },
+        on_attach = on_attach
+      }
+  end

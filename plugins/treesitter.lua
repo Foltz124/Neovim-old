@@ -12,4 +12,5 @@ require'nvim-treesitter.configs'.setup {
     -- Protects against standard highlighting collision
     additional_vim_regex_highlighting = false,
   },
+  indent = { enable = true }
 }

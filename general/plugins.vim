@@ -1,17 +1,15 @@
-" Automate vim plug install
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-endif
-
 call plug#begin()
 
     " Auto comment out lines
 	Plug 'preservim/nerdcommenter'
 
     " File Navigation
-	Plug 'preservim/nerdtree'
+	Plug 'kyazdani42/nvim-web-devicons'
+	Plug 'kyazdani42/nvim-tree.lua'
 
+    " Fonts
+	Plug 'ryanoasis/nerd-fonts'
+    "
     " Tag navigation
 	Plug 'liuchengxu/vista.vim'
 
@@ -26,7 +24,7 @@ call plug#begin()
 	Plug 'rhysd/vim-clang-format'
 
     " Theme
-	Plug 'projekt0n/github-nvim-theme'
+	Plug 'folke/tokyonight.nvim'
 
     " Auto complete
 	Plug 'neovim/nvim-lspconfig'
@@ -42,4 +40,11 @@ call plug#begin()
     
     " Syntax highlighting
     Plug 'nvim-treesitter/nvim-treesitter'
+
+    " Add function information as typing
+    Plug 'ray-x/lsp_signature.nvim'
+
+    " Terminal
+    Plug 'akinsho/toggleterm.nvim'
+
 call plug#end()
