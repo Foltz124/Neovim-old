@@ -33,6 +33,7 @@ keymap(mode, "<A-k>", "<Esc>:m .-2<CR>==gi",opts)
 -- NvimTree
 keymap(mode, "<leader>o", ":NvimTreeOpen<CR>", opts)
 keymap(mode, "<leader>m", ":NvimTreeToggle<CR>", opts)
+keymap(mode, "<leader>r", ":NvimTreeRefresh<CR>", opts)
 
 -- Insert
 mode = "i"

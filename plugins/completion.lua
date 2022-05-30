@@ -9,10 +9,13 @@
       end,
     },
     window = {
-      -- completion = cmp.config.window.bordered(),
-      -- documentation = cmp.config.window.bordered(),
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
+      ['<Tab>'] = cmp.mapping.select_next_item(),
+      ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+      ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete(),
@@ -23,7 +26,6 @@
       { name = 'nvim_lsp' },
       { name = 'vsnip' }, -- For vsnip users.
       { name = 'path' },
-      { name = 'buffer' },
     })
   })
 
@@ -56,17 +58,18 @@
 
   -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  local servers = {'clangd', 'pyright'}
+  local servers = {'clangd', 'pyright', 'texlab'}
   for _, server in ipairs(servers) do
       require('lspconfig')[server].setup {
         capabilities = capabilities
       }
-
-      require('lspconfig')[server].setup {
-        cmd = { "clangd" };
-        init_options = {
-            compiliationDatabaseDirectory = "./build";
-        },
-        on_attach = on_attach
-      }
   end
+
+
+  require('lspconfig')['clangd'].setup {
+    cmd = { "clangd" };
+    init_options = {
+        compiliationDatabaseDirectory = "./build";
+    },
+    on_attach = on_attach
+  }
