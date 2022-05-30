@@ -47,4 +47,10 @@ call plug#begin()
     " Terminal
     Plug 'akinsho/toggleterm.nvim'
 
+    " Git
+    Plug 'lewis6991/gitsigns.nvim'
+
+    " Show indent lines
+    Plug 'lukas-reineke/indent-blankline.nvim'
+
 call plug#end()
