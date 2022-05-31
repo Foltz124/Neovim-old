@@ -5,6 +5,7 @@ source /home/jon/.config/nvim/plugins/gitsigns.lua
 source /home/jon/.config/nvim/plugins/indent-blankline.lua
 source /home/jon/.config/nvim/plugins/nvim-tree.lua
 source /home/jon/.config/nvim/plugins/signiture.lua
+source /home/jon/.config/nvim/plugins/telescope.lua
 source /home/jon/.config/nvim/plugins/treesitter.lua
 source /home/jon/.config/nvim/plugins/toggle-term.lua
 source /home/jon/.config/nvim/plugins/vista.vim

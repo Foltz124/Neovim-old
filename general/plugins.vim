@@ -53,4 +53,8 @@ call plug#begin()
     " Show indent lines
     Plug 'lukas-reineke/indent-blankline.nvim'
 
+    " Fuzzy finding
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+
 call plug#end()
